@@ -622,16 +622,16 @@ variable "ecs_service_enable_execute_command" {
 
 variable "enable_ephemeral_storage" {
   description = "Enable to use Fargate Ephermal Storage"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 variable "ephemeral_storage_size" {
   description = "Size of Ephemeral Storage in GiB"
-  type = number
-  default = 21
+  type        = number
+  default     = 21
 
   validation {
-    condition = var.ephemeral_storage_size >= 21 && var.ephemeral_storage_size <= 200
+    condition     = var.ephemeral_storage_size >= 21 && var.ephemeral_storage_size <= 200
     error_message = "The minimum supported value is 21 GiB and the maximum supported value is 200 GiB."
   }
 }
