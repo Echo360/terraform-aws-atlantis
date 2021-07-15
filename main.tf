@@ -586,7 +586,7 @@ resource "aws_ecs_task_definition" "atlantis" {
   dynamic "ephemeral_storage" {
     for_each = var.enable_ephemeral_storage ? [1] : []
     content {
-      size_in_gib = var.ephemeral_storage_size_in_gib
+      size_in_gib = var.ephemeral_storage_size
     }
   }
 
